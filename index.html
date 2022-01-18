@@ -32,14 +32,18 @@
           <img src="./images/AppLab.png" alt="" />
         </a>
         <nav>
-          <ul>
+          <ul class="navbar-links" aria-expanded="false">
             <li><a href="#">Home</a></li>
             <li><a href="#">Key Features</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Testimonials</a></li>
             <li><a href="#">FAQ</a></li>
+            <a class="btn btn-filled m-only" href="">Try for free</a>
           </ul>
           <a class="btn btn-filled" href="">Try for free</a>
+          <span class="mobile-menu"
+            ><i class="fas fa-bars fa-2x fa-fw"></i
+          ></span>
         </nav>
       </div>
     </header>
@@ -62,7 +66,7 @@
           <a href="#" class="btn">Watch demo video</a>
         </div>
 
-        <figure>
+        <figure class="image">
           <img src="./images/phone-hero.png" alt="" />
         </figure>
       </div>
@@ -573,6 +577,8 @@
     <!-- Javascript -->
     <script>
       let questionHolder = document.querySelectorAll(".question-holder");
+      let navbarLinks = document.querySelector(".navbar-links");
+      let mobileMenu = document.querySelector(".mobile-menu");
       questionHolder.forEach((e) => {
         e.addEventListener("click", () => {
           if (e.children[1].classList.contains("fa-plus")) {
@@ -589,6 +595,16 @@
             );
           }
         });
+      });
+      mobileMenu.addEventListener("click", () => {
+        let expaneded = navbarLinks.getAttribute("aria-expanded");
+        if (expaneded === "false") {
+          navbarLinks.setAttribute("aria-expanded", true);
+          mobileMenu.children[0].classList.replace("fa-bars", "fa-times");
+        } else {
+          navbarLinks.setAttribute("aria-expanded", false);
+          mobileMenu.children[0].classList.replace("fa-times", "fa-bars");
+        }
       });
     </script>
   </body>
