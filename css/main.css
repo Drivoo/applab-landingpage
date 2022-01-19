@@ -280,7 +280,7 @@ header a.btn {
   position: relative;
 
   padding: calc(var(--section-padding) + 60px) 0 60px;
-  background-color: #f9fafc;
+  background: linear-gradient(to bottom, #f9fafc, #fff);
 }
 .shapes-1 {
   position: absolute;
@@ -303,12 +303,12 @@ header a.btn {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-image: url(./images/hero_bottom.png);
+  background-image: url("../images/hero_bottom.png");
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: -1;
+  z-index: 0;
   width: 100%;
-  height: 150px;
+  height: 200px;
 }
 .hero .container {
   display: flex;
@@ -392,6 +392,8 @@ header a.btn {
 .trusted-by {
   text-align: center;
   margin: 100px 0 0;
+  position: relative;
+  z-index: 3;
 }
 @media (max-width: 991px) {
   .trusted-by {
@@ -975,7 +977,7 @@ header a.btn {
 /* Start Download Section */
 .download {
   padding: var(--section-padding) 0;
-  background-image: url(/images/download-app.svg);
+  background-image: url("../images/download-app.svg");
   background-size: 50% 100%;
   background-repeat: no-repeat;
   background-position: right;
